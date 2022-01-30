@@ -8,4 +8,4 @@ for ip in iplist:
         print (ip+" is down")
     else:
         print (ip+" is up")
-# You end with a log of all the ip addresses
+# You end with a log of all the ip addressess
