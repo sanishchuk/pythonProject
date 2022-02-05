@@ -1,4 +1,3 @@
-
 file_name = "some_file.txt"
 log = "results.txt"
 
@@ -12,16 +11,19 @@ with open (file_name, 'r') as ff:
     print (data)
     print(type(data))
 
+
+
     import subprocess
     import datetime
 
+while True:
     for ip in data:
         p = subprocess.Popen('ping ' + ip, stdout=subprocess.PIPE)
         # the stdout=subprocess.PIPE will hide the output of the ping command
         p.wait()
         if p.poll():
             with open (log, 'a') as dd:
-                dd.write(ip + " is down " + str(datetime.datetime.now()))  #как тут в файле записи перенести каждый результат на новую строку?
+                dd.write(ip + " is down " + str(datetime.datetime.now()) + '\n')
 
         else:
             print(ip + " is up")
