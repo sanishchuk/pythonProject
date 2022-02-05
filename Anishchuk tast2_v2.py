@@ -11,7 +11,7 @@ with open (file_name, 'r') as ff:
     print (data)
     print(type(data))
 
-ip_dict = dict.fromkeys(data, 0) #заявляю, что по умолчанию все статусы доступны доступны
+ip_dict = dict.fromkeys(data, 0) #заявляем, что по умолчанию все статусы доступны
 
 print(ip_dict) #посмотрим, что в словаре
 
@@ -24,8 +24,7 @@ while True:
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT)
     stdout, stderr = status.communicate()
-    # print(stdout)
-    # print(stderr)
+
 
     if ip_dict[IPs] != status.returncode:
         with open(log, 'w') as dd:
